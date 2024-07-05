@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "isolatedModules": true,
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",
+    "types": ["./types.d.ts"]
+  },
+  "include": ["src/**/*.ts*"]
+}

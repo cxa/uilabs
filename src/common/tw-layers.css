@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes rotate {
+    to {
+        transform: rotate(720deg);
+    }
+}
