@@ -2,8 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes rotate {
-    to {
-        transform: rotate(720deg);
-    }
+@font-face {
+    font-family: "Alte Haas Grotesk";
+    font-weight: 400;
+    font-style: normal;
+    src: url("./AlteHaasGroteskRegular.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Alte Haas Grotesk";
+    font-weight: 700;
+    font-style: normal;
+    src: url("./AlteHaasGroteskBold.woff2") format("woff2");
 }

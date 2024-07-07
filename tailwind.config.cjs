@@ -182,7 +182,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['"Rethink Sans"', ...defaultTheme.fontFamily.sans],
+        sans: ['"Alte Haas Grotesk"', ...defaultTheme.fontFamily.sans],
         serif: ['"Crimson Pro"', ...defaultTheme.fontFamily.serif],
         mono: ['"Azeret Mono"', ...defaultTheme.fontFamily.mono],
       },
