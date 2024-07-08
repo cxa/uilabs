@@ -3,7 +3,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: "jit",
-  content: ["src/**/*.tsx"],
+  content: ["src/**/*.tsx", "src/**/*.html"],
   theme: {
     screens: {
       xs: "475px",
