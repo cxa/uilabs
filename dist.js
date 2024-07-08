@@ -19,7 +19,7 @@ try {
 }
 
 // Copy file that not ruquired to build in `public` first
-const cmd = `pnpm parcel build public/* --dist-dir ${distRootDir} && pnpm parcel build ${input} --dist-dir ${distProjDir} --public-url /uilabs/${projName} && pnpm gh-pages -d ${distDirName}`;
+const cmd = `pnpm parcel build  public/* --dist-dir ${distRootDir} --no-cache && pnpm parcel build ${input} --dist-dir ${distProjDir} --public-url /uilabs/${projName} --no-cache && pnpm gh-pages -d ${distDirName}`;
 const opts = {
   shell: true,
   stdio: "inherit",
