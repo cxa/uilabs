@@ -3,6 +3,7 @@ import { AsteriskIcon, CodeXmlIcon } from "lucide-react";
 
 import Layout from "../common/Layout";
 import { SRC_ROOT } from "../common/constants";
+import BouncingText from "./BouncingText";
 import HoriScaleBar from "./HoriScaleBar";
 import ToggleExpandDropdown from "./ToggleExpandDropdown";
 import VertScaleBar from "./VertScaleBar";
@@ -48,6 +49,10 @@ export default function App() {
           reference="https://x.com/proskuaaa/status/1791438947668590916"
         >
           <ToggleExpandDropdown />
+        </Box>
+
+        <Box srcFilename="BouncingText.tsx" reference="https://roccofridge.com">
+          <BouncingText />
         </Box>
 
         {Array.from({ length: 20 }).map((_, i) => (
