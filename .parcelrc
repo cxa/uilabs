@@ -5,5 +5,6 @@
     "react:*.svg": ["@parcel/transformer-svg-react"],
     // https://github.com/parcel-bundler/parcel/issues/7587#issuecomment-1117652812
     "react:*": ["..."]
-  }
+  },
+  "resolvers": ["parcel-resolver-ignore", "..."]
 }

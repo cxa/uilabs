@@ -9,5 +9,9 @@ const projDir = path.basename(dir);
 
 child_process.spawn("pnpm", ["parcel", input], {
   stdio: "inherit",
-  env: { ...process.env, POSTHTML_INCLUDE_PROJ: projDir },
+  env: {
+    ...process.env,
+    POSTHTML_INCLUDE_PROJ: projDir,
+    POSTHTML_INCLUDE_PUBLIC_ROOT: "/public",
+  },
 });

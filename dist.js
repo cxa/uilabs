@@ -5,17 +5,20 @@ import path from "node:path";
 const dir = process.argv[2];
 if (!dir) throw Error("Target not specified!");
 const input = path.join(dir, "index.html");
-const projName = path.basename(dir);
+let projName = path.basename(dir);
+if (projName === "src") projName = "";
 const distDirName = "build";
 const distRootDir = path.join(import.meta.dirname, distDirName);
 const distProjDir = path.join(distRootDir, projName);
 
-try {
-  // Wipe out old dist files
-  await fs.rm(distProjDir, { recursive: true, force: true });
-  await fs.mkdir(distProjDir, { recursive: true });
-} catch (e) {
-  console.error(`failed to remove ${distProjDir}: ${e}`);
+if (projName) {
+  try {
+    // Wipe out old dist files
+    await fs.rm(distProjDir, { recursive: true, force: true });
+    await fs.mkdir(distProjDir, { recursive: true });
+  } catch (e) {
+    console.error(`failed to remove ${distProjDir}: ${e}`);
+  }
 }
 
 // Copy file that not ruquired to build in `public` first
@@ -23,7 +26,11 @@ const cmd = `pnpm parcel build  public/* --dist-dir ${distRootDir} --no-cache &&
 const opts = {
   shell: true,
   stdio: "inherit",
-  env: { ...process.env, POSTHTML_INCLUDE_PROJ: projName },
+  env: {
+    ...process.env,
+    POSTHTML_INCLUDE_PROJ: projName,
+    POSTHTML_INCLUDE_PUBLIC_ROOT: "/uilabs",
+  },
 };
 
 console.info(`Performing ${cmd}`);
