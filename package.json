@@ -39,11 +39,11 @@
     "typescript": "^5.5.3"
   },
   "dependencies": {
+    "@uidotdev/usehooks": "^2.4.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.12",
     "lucide-react": "^0.399.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-use-measure": "^2.1.1"
+    "react-dom": "^18.3.1"
   }
 }

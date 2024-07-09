@@ -1,8 +1,8 @@
+import { useClickAway, useMeasure } from "@uidotdev/usehooks";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import { CheckIcon, ChevronDownIcon } from "lucide-react";
 import React from "react";
-import useMeasure from "react-use-measure";
 
 const values = [
   "Artificial",
@@ -25,10 +25,14 @@ export default function ExpandedSelect() {
   const [isOpen, setOpen] = React.useState(false);
   const [btnRef, btnBounds] = useMeasure();
   const [listRef, listBounds] = useMeasure();
+  const ref = useClickAway<React.ElementRef<typeof motion.div>>(() =>
+    setOpen(false),
+  );
 
   return (
     <div className="relative z-50 min-h-10">
       <motion.div
+        ref={ref}
         className={clsx(
           "absolute top-0 left-2",
           "bg-white border  border-grey-200 rounded-lg overflow-hidden",
